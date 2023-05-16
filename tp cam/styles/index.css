@@ -1,0 +1,764 @@
+/* Tipografías y propiedades básicas del documento. Pueden poner sus tipografías y descomentar borrando los */  
+@font-face {
+  font-family:"Helvetica";
+  src: url(/assets/fonts/Helvetica.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family:"Helvetica-Bold";
+  src: url(/assets/fonts/Helvetica-Bold.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family:"Raleway";
+  src: url(/assets/fonts/Raleway-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family:"Raleway-SemiBold";
+  src: url(/assets/fonts/Raleway-SemiBold.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* definimos el tamaño de tipografía base y la familia tipográfica por defecto */
+html,
+body {
+  font-size: 10px;
+  font-family: "Helvetica";
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box !important; /* Importante: esto hace que el tamaño de todas las cajas contemple el padding */
+}
+
+/* la familia tipográfica por defecto para los títulos */
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:"Raleway-SemiBold";
+}
+
+h1{
+  font-family:"Helvetica"
+}
+
+h1 {
+  font-size: 8rem;
+  font-weight: bold;
+
+}
+h2 {
+  font-size: 5rem;
+
+}
+
+h3 {
+  font-size: 5rem;
+}
+
+h4 {
+  font-size: 4rem;
+}
+
+h5 {
+  font-size: 3rem;
+}
+
+h6 {
+  font-size: 3rem;
+
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.oculto{
+display: none;
+}
+
+.oculto-mob{
+display: none;
+}
+
+.oculto-desk{
+  display: contents;
+}
+/********
+Paso 1: Definimos la estructura básica
+
+********/
+/* Barra de navegación superior */
+header {
+  height: 10%;
+  padding: 2rem 4rem;
+}
+
+
+/* Cada sección de la landing */
+section {
+
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Únicamente la portada tendrá un alto excepcional, para que ocupe toda la pantalla:
+calculamos el total del alto de la pantalla menos lo que mide el header */
+section#portada {
+  height: calc(100vh - 100px);
+}
+
+/* Únicamente las secciones que ocupen posiciones impares dentro de su contenedor, tendrán otro fondo.
+Esto sirve para que nos quede una sección de un color, luego la siguiente de otro, luego la siguiente igual a la primera
+y así suscesivamente */
+section:nth-child(odd) {
+  background-color: #bbb;
+}
+
+/* Únicamente las secciones que lleven la clase seccion-form serán menos altas */
+section.seccion-form {
+  min-height: 20vh;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  padding: 8rem 4rem;
+  height: 33vh;
+  background-color: black;
+}
+
+/********
+Paso 2: Trabajamos nuestro header
+
+********/
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  font-size: 2.5rem;
+}
+
+.logo-container {
+  height: 10%;
+  padding: 2rem 4rem;
+}
+
+header nav img {
+  height: 100%;
+
+}
+
+.contenedor-1{
+background-color: #000;
+}
+
+
+
+/********
+Paso 3: Trabajamos nuestra portada
+
+********/
+section#portada {
+  background-image: url("../assets/img/foto\ portada\ desktop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+section#portada h1
+{
+  color: #fff;
+  background-color: #000;
+}
+
+section#portada
+h4 {
+  color: black;
+}
+
+
+
+div.portada-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60vw; 
+} 
+
+
+div.portada-izquierda .separador {
+  height: 50px;
+  width: 20vw;
+  margin: 4rem 0;
+
+}
+
+
+
+div.portada-izquierda .portada-miniform {
+  border: 2px solid #e5ff00;
+  background-color: yellow;
+  margin: 3rem 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
+  margin: auto;
+}
+
+div.portada-izquierda .portada-miniform input[type="submit"] {
+  background-color: yellow;
+  color: black;
+  font-size: 3rem;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  margin-left: 2rem;
+}
+div.portada-izquierda .portada-miniform input[type="email"] {
+  font-size: 2.5rem;
+  padding: 1rem 2rem;
+}
+
+div.portada-derecha {
+  height: 66vh;
+  margin-left: 10rem;
+}
+div.portada-derecha img {
+  height: 100%;
+}
+
+/********
+Paso 4: Trabajamos nuestra primera sección
+
+********/
+section#seccion-1 {
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+
+
+div.cards-argumentos {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+
+}
+
+div.cards-argumentos .card {
+  width: 30%;
+  margin: 0 2rem;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex;
+  box-shadow: 2px 2px 10px 2px rgb(251, 255, 0);
+  cursor: pointer;
+
+}
+
+
+
+
+div.cards-argumentos .card .card-contenido {
+
+  width: 100%;
+  padding: 2rem;
+  color: transparent;
+}
+
+div.cards-argumentos .card .card-contenido h6 {
+  margin-bottom: 1.5rem;
+  color: black;
+  margin: 4vw;
+}
+div.imagen-card{
+  background-color: transparent;
+  position: absolute;
+  padding-right: 45%;
+  padding-top: 30%;
+
+}
+
+div.imagen-card-2{
+  background-color: transparent;
+    position: absolute;
+
+    padding-right: 1%;
+    padding-bottom: 30%;
+  }
+
+  div.imagen-card-3{
+    background-color: transparent;
+
+      padding-left: 30%;
+     
+      
+    }
+
+/********
+Paso 5: Trabajamos nuestra segunda sección
+
+********/
+section#seccion-2 {
+  align-items: center;
+  background-image: url(/assets/img/Group\ 65.png);
+
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2vw;
+
+}
+section#seccion-2 h3 {
+
+  color: black;
+  background-color: white;
+  box-shadow: 2px 2px 0px 0px rgb(251, 255, 0);
+  padding: .5em;
+  width: 50%;
+}
+
+section#seccion-2 h4 {
+
+  color: black;
+  align-self: flex-end;
+  background-color: yellow;
+  box-shadow: 2px 2px 2px 2px rgb(251, 255, 0);
+  padding: 1rem 2rem;
+  margin-left: 30rem;
+
+}
+.papaT{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 70vw;
+  
+}
+div.tarjeta-1{
+  background-color: white;
+  flex: 50%;
+  box-shadow: 2px 2px 10px 2px rgb(251, 255, 0);
+  margin-top: 10%;
+  margin-right: 1%;
+
+  border: 5px solid white;
+  display: flex;
+  font-size: 1.2vw;
+}
+
+div.tarjeta-2{
+  background-color: white;
+  flex: 50%;
+  box-shadow: 2px 2px 10px 2px rgb(251, 255, 0);
+  margin-bottom: 10%;
+  margin-right: 1%;
+
+  border: 5px solid white;
+  display: flex;
+  font-size: 1.2vw;
+}
+
+div.tarjeta-3{
+  background-color: white;
+  flex: 50%;
+  box-shadow: 2px 2px 10px 2px rgb(251, 255, 0);
+  margin-top: 10%;
+  margin-right: 1%;
+
+  border: 5px solid white;
+  display: flex;
+  font-size: 1.2vw;
+}
+
+.estellas{
+width: 10px;
+height: 10px;
+}
+
+.separador{
+
+  height: 30px;
+  width: 20vw;
+  margin: 2rem 0;
+}
+
+
+.tarjeta .contenido{
+
+  background-color: white;
+  padding: 10px;
+  margin: auto;
+}
+
+.controls-1{
+  width: 600px;
+  height: 100px;
+  background-color: white;
+  box-shadow: 2px 2px 10px 2px rgb(251, 255, 0);
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 50px;
+  margin: 10px;
+  }
+
+
+
+
+/********
+Paso 6: Trabajamos nuestra tercera sección
+
+********/
+section#seccion-3 {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+section#seccion-3 h1,
+section#seccion-3 h3 {
+  color: black;
+  background-color: white;
+  padding: .5em;
+  width: 50%;
+}
+.separador2{
+
+  height: 30px;
+  width: 5vw;
+  margin: 2rem 0;
+}
+
+.form-register {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.controls {
+  justify-content: space-around;
+
+  background: rgb(197, 196, 196);
+  padding: 10px;
+  font-size: 30px;
+  color: white;
+}
+
+.controls-2{
+  justify-content: space-around;
+  width: 50%;
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  font-size: 30px;
+  color: black;
+  }
+
+
+.botons {
+  font-family: Arial;
+  width: 60%;
+  background: yellow;
+  border: none;
+  padding: 20px;
+  color: black;
+  margin-left: 200px;
+  font-size: 30px;
+}
+
+.agradecer{
+  
+  background-color: white;
+}
+
+
+/********
+Paso 8: Trabajamos el footer
+
+********/
+/*:::::Pie de Pagina*/
+.pie-pagina{
+  width: 100%;
+  height: 100%;
+  background-color: #0a141d;
+}
+.pie-pagina .grupo-1{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap:50px;
+  padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+  width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+  color: #efefef;
+  margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  margin-right: 10px;
+  background-color: #0d2033;
+  text-align: center;
+  transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+  color: aqua;
+}
+
+.pie-pagina .grupo-2 small{
+  font-size: 15px;
+}
+
+
+@media (max-width: 500px){
+
+  .logo-container{
+    margin-left: 20px;
+  }
+
+  .oculto-escritorio{
+
+  display:none;
+  
+  }
+
+  .oculto-mobile{
+  display: contents;
+  }
+  .portada-containe{
+    flex-direction: column;
+  }
+
+  
+  html {
+    font-size: 7.5px;
+  }
+
+  section#portada{
+    min-height: calc(100vh - 70px);
+    height: auto;
+  }
+
+  h1{
+    font-size: 30px;
+
+  }
+  .contenedor{
+  background-color: black;
+
+  }
+
+  h2{
+    color: black;
+    font-size: 25px;
+  
+  }
+
+  h3{
+    font-size: 20px;
+    margin: 0;
+    margin-left: 200px;
+    line-height: 160%;
+    height: auto;
+  }
+
+  h4{
+    font-size: 25px;
+  }
+
+  h5{
+    font-size: 18px;
+    margin: 0;
+    margin-left: 10px;
+    line-height: 160%;
+    height: auto;
+  }
+  p{
+  font-size: 20px;
+  }
+
+  .oculto-desk{
+  display: none;
+  }
+  .oculto-mob{
+  display: contents;
+}
+
+  section#portada {
+    width: 100%;
+   background-image: url(/assets/img/portada\ mobile.png);
+
+    min-height: calc(100vh - 70px);
+
+  }
+
+  div.portada-container {
+    flex-direction: column;
+    width: 60vw; 
+ 
+}
+
+  div.portada-izquierda {
+    height: 50vh;
+    margin-left: 0;
+    margin-top: 3rem;
+
+  }
+
+  div.portada-izquierda .portada-miniform {
+    width: 100%;
+  }
+
+  div.cards-argumentos {
+    flex-direction: column;
+    width: 800px;
+    
+    
+  }
+
+  div.cards-argumentos .card {
+    margin: 9rem 2rem;
+    height: 40vh;  
+  }
+
+  .imagen-card{
+    padding-bottom: 800px;
+    padding-left: 200px;
+  }
+
+  .imagen-card-2{
+    padding-top: 500px;
+    padding-right: 200px;
+  }
+
+  .controls-1{
+    width: 300px;
+    height: 50px;
+    font-size: 20px; 
+    }
+
+    section#seccion-2 {
+      background-color: #000;
+      background-image: url(/assets/img/Group\ 65\ mobile.png);
+      height: 100%;
+    
+    }
+
+
+    .papaT{
+      padding: 3em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 70vw;
+    
+    }
+
+
+    .controls{
+      width: 350px;      
+    }
+    .controls-2{    
+      width: 100%;
+    }
+   .botons {
+
+    margin-left: 60px;
+
+  } 
+
+    
+
+
+    .form-register {
+      flex-direction: column;
+    }
+
+    .formulario{
+     width: 300px;
+    }
+
+
+
+    .agradecer{
+      margin-left: 20px;
+      margin-top: 100px;
+    }
+
+    .pie-pagina .grupo-1{
+      margin-left: 20px;
+      padding: 50px 0px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pie-pagina .grupo-1 .red-social a{ 
+      width: 30px;
+      height: 40px;
+      margin-right: 5px;
+      margin-left: 5px;
+      background-color: transparent;
+    }
+
+    
+   
+
+
+
+
+}
+
+
+
+
